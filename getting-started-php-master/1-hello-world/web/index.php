@@ -19,21 +19,27 @@
 // [START index_php]
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$app = new Silex\Application();
+use Silex\Application;
+use Silex\Provider\TwigServiceProvider;
+ //use \storage\iot-cars-v2:librerias\SilexMaster\src\Silex\Provider\TwigServiceProvider;
+ //use Symfony\Component\HttpFoundation\Request;
 
-$app->get('/', function () {
-    return 'Hello World';
-});
 
-$app->get('/goodbye', function () {
-    return 'Goodbye World';
-});
+ // create the Silex application
+ $app = new Application();
+ $app->register(new TwigServiceProvider());
+ $app['twig.path'] = [ __DIR__ ];
 
-// @codeCoverageIgnoreStart
-if (PHP_SAPI != 'cli') {
-    $app->run();
-}
-// @codeCoverageIgnoreEnd
+ $app->get('/', function () use ($app) {
+     /** @var PDO $db */
+     $db = $app['database'];
+     /** @var Twig_Environment $twig */
+     $twig = $app['twig'];
+   
+     // Show existing guestbook entries.
+     $results = $db->query('SELECT * FROM vehiculo');
+   
+     echo 'Resultado = ' . $results;
+ });
 
-return $app;
-// [END index_php]
+ die ("si termine");
