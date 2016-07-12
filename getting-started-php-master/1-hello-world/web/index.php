@@ -35,7 +35,7 @@ use Silex\Provider\TwigServiceProvider;
      $db = $app['database'];
      /** @var Twig_Environment $twig */
      $twig = $app['twig'];
-   
+#hola   
      // Show existing guestbook entries.
      $results = $db->query('SELECT * FROM vehiculo');
    
