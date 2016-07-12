@@ -11,7 +11,7 @@ runtime_config:
  env_variables:
  # Replace project, instance, database, user and password with the values obtained
  # when configuring your Cloud SQL instance.
-  MYSQL_DSN: mysql:unix_socket=/cloudsql/sql-cars;dbname=mydb
+  MYSQL_DSN: mysql:host=173.194.83.205;port=3306;dbname=mydb
   MYSQL_USER: root
-  MYSQL_PASSWORD: ''
+  MYSQL_PASSWORD: '123'
 # [END env]
