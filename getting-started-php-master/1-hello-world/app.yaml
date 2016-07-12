@@ -1,9 +1,11 @@
 runtime: php55
 api_version: 1
 
-handlers:
- - url: /.*
- script: helloworld.php
+#handlers:
+# - url: /.*
+# script: helloworld.php
+runtime_config:
+ document_root: web
  
  # [START env]
  env_variables:
