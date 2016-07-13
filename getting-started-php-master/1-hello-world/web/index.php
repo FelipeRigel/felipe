@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+
+die ("Hello".$_POST["param1"]);
 // [START index_php]
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -42,4 +44,3 @@ use Silex\Provider\TwigServiceProvider;
      echo 'Resultado = ' . $results;
  });
 
- die ("si termine");
